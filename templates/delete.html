@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>delete</title>
+</head>
+<body>
+<h1>deleted result</h1>
+<form>
+<table>
+<tr>
+<th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+</tr>
+{% for book in books %}
+<tr>
+ <td>{{book.0}}</td>
+ <td><a href="/message/?name={{book.2}}&a={{book.1}}">{{book.1}}</a></td>
+ <td>{{book.2}}</td>
+ <td>{{book.3}}</td>
+ <td>{{book.4}}</td>
+ <td>{{book.5}}</td>
+</tr>
+{% endfor %}
+</table>
+</form>
+<a href="http://gyflotus2.sinaapp.com/"><h1>return to mainpage</h1></a>
+</body>
+</html>

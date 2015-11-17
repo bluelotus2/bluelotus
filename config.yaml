@@ -1,0 +1,5 @@
+name: gyf1
+version: 1
+libraries:
+- name:"django"
+  version:"1.4"

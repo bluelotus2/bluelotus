@@ -1,0 +1,10 @@
+if request.POST:
+        post = request.POST
+        new_book = Books(
+            ISBN = post["ISBN"],
+            Title = post["Title"],
+            AuthorID = request.AuthorID,
+            Publisher = post["Publisher"],
+            PublishDate = post["PublishDate"],
+            Price = post["Price"])
+        new_book.save()

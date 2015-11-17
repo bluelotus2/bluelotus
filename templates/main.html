@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>functions</title>
+</head>
+<body>
+<h1>functions</h1>
+<form>
+<table>
+<tr>
+<th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+</tr>
+{% for book in books %}
+<tr>
+ <td>{{book.0}}</td>
+ <td><a href="/message/?name={{book.2}}&a={{book.1}}">{{book.1}}</a></td>
+ <td>{{book.2}}</td>
+ <td>{{book.3}}</td>
+ <td>{{book.4}}</td>
+ <td>{{book.5}}</td>
+ <td><a href="/delete/?name={{book.0}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+</form>
+<form method="get" action="searching_result">
+<table>
+<tr>
+<th>Input the author'name you want to search(you can see all the writers' name if you click 'add_author' below directly)</th>
+</tr>
+</table>
+<table>
+<tr>
+ <td><input type="text" name="name"></td>
+ <td><input type="submit" value="search"><input type="reset" value="refill"></td>
+</tr>
+</table>
+</form>
+<form method="get" action="add_author">
+<table>
+<tr>
+<th>input the messages of the writer you want to add:(name,id,age,country)<th>
+</tr>
+</table>
+<table>
+<tr>
+ <td><input type="text" name="name1"></td>
+ <td><input type="text" name="authorid"></td>
+ <td><input type="text" name="age"></td>
+ <td><input type="text" name="country"></td>
+ <td><input type="submit" value="add_author"><input type="reset" value="refill"></td>
+</tr>
+</table>
+</form>
+<form method="get" action="add_book">
+<table>
+<tr>
+<th>input the messages of the book you want to add:(isbn,title,authorid,publisher,publishdate,price)(if the author is not in the Authors,please add him/her first)<th>
+</tr>
+</table>
+<table>
+<tr>
+ <td><input type="text" name="isbn"></td>
+ <td><input type="text" name="title"></td>
+ <td><input type="text" name="authorid"></td>
+ <td><input type="text" name="publisher"></td>
+ <td><input type="text" name="publishdate"></td>
+ <td><input type="text" name="price"></td>
+ <td><input type="submit" value="add_book"><input type="reset" value="refill"></td>
+</tr>
+</table>
+</form>
+<form method="get" action="edit_book">
+<table>
+<tr>
+<th>input the messages of the book you want to replace:(isbn,title,authorid,publisher,publishdate,price)(if the author is not in the Authors,please add him/her first)<th>
+</tr>
+</table>
+<table>
+<tr>
+ <td><input type="text" name="isbn"></td>
+ <td><input type="text" name="title"></td>
+ <td><input type="text" name="authorid"></td>
+ <td><input type="text" name="publisher"></td>
+ <td><input type="text" name="publishdate"></td>
+ <td><input type="text" name="price"></td>
+ <td><input type="submit" value="edit_book"><input type="reset" value="refill"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

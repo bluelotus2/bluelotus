@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>details</title>
+</head>
+<body>
+<table>
+<form action="/search_book/" method="post">
+<b>Please input the book you want to search:</b>
+<input type="text"><input type="submit value="searching">
+</form></div>
+<tr>
+<th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+</tr>
+{% for book in book_list %}
+<tr>
+ <td>{{book.Title}}</td>
+ <td>{{book.AuthorID}}</td>
+ <td>{{book.Publisher}}</td>
+ <td>{{book.PublishDate}}</td>
+ <td>{{book.Price}}</td>
+ <td><a href="delete_book/?ISBN={{book.ISBN}}Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+<tr>
+<a href="/main">return to add a new book</a>
+</tr>
+</body>
+</html>
